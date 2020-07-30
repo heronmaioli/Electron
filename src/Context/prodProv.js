@@ -4,7 +4,7 @@ import Context from './prodCont'
 
 const ProdProvider = ({ children }) => {
   const [products, setProducts] = useState([])
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(0)
 
   useEffect(() => {
     async function fetchdata () {

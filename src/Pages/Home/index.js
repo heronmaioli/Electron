@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import SearchCode from '../../Components/SearchCode'
 import CommonTitle from '../../Components/CommonTitle'
@@ -16,7 +17,12 @@ import {
 
 export default function Home () {
   const { setPage } = useContext(Context)
+  const history = useHistory()
 
+  const Find = () => {
+    setPage(2)
+    history.push('/find')
+  }
   return (
     <Background>
       <Container>
@@ -31,7 +37,7 @@ export default function Home () {
 
         <CodContainer>
           <SearchCode />
-          <button onClick={() => setPage(2)}>Buscar</button>
+          <button onClick={() => Find()}>Buscar</button>
         </CodContainer>
         <OrderListContainer>
           <OrderList />
